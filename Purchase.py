@@ -62,7 +62,7 @@ def receipt():
     print("\nReceipt:")
     for item in receipt_items:
         print(f"{item[0]} x{item[1]}: ${item[2]}")
-    print("Overall total amount:", total_amount_overall)
+    print("Overall $ amount: ", total_amount_overall)
     sys.exit()
 
 

@@ -8,3 +8,4 @@ def clear_terminal():
 def edit_q():
     choice = input("Would you like to Add item(1), Edit item(2), Remove item(3): ")
     if choice == '1':
+        pass
