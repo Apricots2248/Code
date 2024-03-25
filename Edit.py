@@ -22,6 +22,7 @@ def edit_q():
     else:
         if choice == '4':
             print('done')
+            clear_terminal()
 
 def add_item():
     # Assuming print_csv_file is a function defined elsewhere that prints the contents of a CSV file

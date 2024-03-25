@@ -18,6 +18,7 @@ def main():
             print ('Bye')
             break
         else:
+            main()
             (print('Invalid input, Try again'))
             
 
