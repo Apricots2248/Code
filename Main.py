@@ -4,6 +4,7 @@ def clear_terminal():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 def main():
+    clear_terminal()
     while True:
         choice = input("Would you like to Edit items(1), Process Purchase(2), Quit(3): ")
         clear_terminal()

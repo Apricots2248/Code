@@ -9,7 +9,7 @@ def print_csv_file(file_path):
     with open(file_path, 'r', newline='') as csvfile:
         csv_reader = csv.reader(csvfile)
         for row in csv_reader:
-            print(', '.join(row))
+            print(', $'.join(row))
 
 total_amount_overall = 0
 receipt_items = []
