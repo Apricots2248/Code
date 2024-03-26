@@ -21,7 +21,7 @@ def get_item():
 
     while True:# Prompt the user to enter a keyword and column number 
         print_csv_file('ProductStock.csv')
-        Name = input("Enter Product: ") 
+        Name = input("Enter Product: ").lower().capitalize()
         column_num = 0
 
         # Open the CSV file 
