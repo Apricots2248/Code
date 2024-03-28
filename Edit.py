@@ -27,9 +27,12 @@ def edit_q():
 
 def add_item():
     print_csv_file('ProductStock.csv')
-    
-    item = input("Item name: ").lower().capitalize()
+    item = input("Item name: ").capitalize()  
     price = input("Item price: ")
+    if price.isalpha():
+        clear_terminal()
+        print('Invalid inout, Item Price must be a number, Try again')
+        add_item()
 
     with open(file_path, 'a', newline='') as csvfile:
         writer = csv.writer(csvfile)
