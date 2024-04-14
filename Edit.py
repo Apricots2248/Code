@@ -28,15 +28,18 @@ def edit_q():
 def add_item():
     print_csv_file('ProductStock.csv')
     item = input("Item name: ").capitalize()  
-    price = input("Item price: ")
-    if price.isalpha():
-        clear_terminal()
-        print('Invalid inout, Item Price must be a number, Try again')
-        add_item()
+    while True:
+        price = input("Item price: ")
+        if price.replace('.', '', 1).isdigit() and price.count('.') < 2:
+            break
+        else:
+            clear_terminal()
+            print('Invalid inout, Item Price must be a number, Try again')
 
     with open(file_path, 'a', newline='') as csvfile:
         writer = csv.writer(csvfile)
         writer.writerow([item, price])
+        
 
 def edit_item():
     choice = input("would you like to edit Name(1), or Price (2): ")
@@ -113,6 +116,7 @@ def remove_item():
     item_name = input("Enter the name of the item to remove: ").lower().capitalize()
     file_path = 'ProductStock.csv'
     temp_file_path = 'temp_ProductStock.csv'
+    item_exists = False
     
     with open(file_path, 'r', newline='') as csvfile:
         reader = csv.reader(csvfile)
