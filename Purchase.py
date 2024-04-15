@@ -32,9 +32,14 @@ def get_item():
             # Loop through each row in the CSV file 
             for row in reader: 
                 # Check if the keyword is in the specified column 
-                if Name in row[column_num]: 
-                    amt = int(input("Enter item Amount:"))
-                    total_amount = amt * int(row[1])
+                if Name in row[column_num]:
+                    try:
+                        amt = float(input("Enter item Amount:"))                        
+                    except:
+                        clear_terminal()
+                        print("invalid input")
+                        return      
+                    total_amount = amt * float(row[1])           
                     print("Current item $ amount:", total_amount)
                     total_amount_overall += total_amount
                     found = True
